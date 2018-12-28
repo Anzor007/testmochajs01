@@ -9,7 +9,11 @@ console.log("\n-01",test01);
 console.log("\n-02",test02);
 console.log("\n-03",test03);
 console.log("\n-04",test04);
+console.log("\n-04",test04);
+console.log("\n-04",test04);
+console.log("\n-04",test04);
 console.log("\n-05",test05);
+console.log("\n-06",test06);
 console.log("\n-06",test06);
 
 describe('Cat', function() {
