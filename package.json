@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "start": "node ooo.js",
+    "test": "mocha",
+    "test2": "mocha --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}

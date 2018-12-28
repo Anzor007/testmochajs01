@@ -1,0 +1,218 @@
+
+> test@1.0.0 test /Users/developer/007/test
+> mocha
+
+
+-01 test01
+ function pick(mass)
+{
+   return mass[Math.floor(Math.random() * mass.length)];
+}
+
+-02 test02
+ function catFactory()
+{
+    var massName = ['Айсберг','Аскольд','Астерикс' ,'Аякс'     ,'Артур'];
+    var massAge = ['1','2','3','5','7','9','10','13'];
+    var massGender = ['Мужской','Женский','Непонятный'];
+    var massLegsCount = ['4','3'];
+    var massTailLength  = ['1','3','5','7','9','11','13','15','25'];
+    
+    var catfac = {};
+    catfac.name = pick01(massName);
+    catfac.age = pick01(massAge);
+    catfac.gender = pick01(massGender);
+    catfac.legsCount = pick01(massLegsCount);
+    catfac.tailLength  = pick01(massTailLength);
+
+    return catfac;
+}
+
+-03 test03
+ function catsGroupGenerate(n0)
+{
+    var arraCatFac = [];
+
+    for (var i=0; i<n0; i++) {
+        arraCatFac[i]=catfact();
+    }
+    return arraCatFac;
+}
+
+-04 test04
+ { catMen: [Function: catMen],
+  catName: [Function: catName],
+  catOld: [Function: catOld],
+  catKid: [Function: catKid] }
+
+-04 test04.catMen
+ function catMen(catsGGList) {
+    var arraCatMen = [];
+
+    var counter = 0;
+
+    for (var i=0; i<n; i++){
+        if (catsGGList[i].gender === "Мужской"){            
+            arraCatMen[counter] = catsGGList[i];
+            counter++;
+        }
+     }
+     if (counter===0){
+         console.log (" Мужиков нет ");
+     }
+     else{
+        console.log (" - котов мужского пола -\n",counter);
+        console.log (" ",arraCatMen);
+     }
+     
+     return arraCatMen;
+}
+
+-04 test04.catName
+ function catName(catsGGList) {
+    var arraCatName = [] ;
+    for (var i=0; i<n; i++) {
+        arraCatName[i] = catsGGList[i].name;
+     }
+     return arraCatName;
+}
+
+-04 test04.catOld
+ function catOld(catsGGList,n0) {
+    var t_arracatAge=[];
+    for (var i0=0; i0<catsGGList.length; i0++) {
+        t_arracatAge[i0]=catsGGList[i0];
+    }
+    t_arracatAge.sort((prev,next) => prev.age-next.age);
+    var arrafin = t_arracatAge.slice(t_arracatAge.length-n0);
+    return arrafin;
+}
+
+-04 test04.catKid
+ function catKid(catsGGList,n0) {
+    var t_arracatAge=[];
+
+    for (var i0=0; i0<catsGGList.length; i0++) {
+        t_arracatAge[i0]=catsGGList[i0];
+    }
+
+    t_arracatAge.sort((prev,next) => next.age-prev.age);
+
+    var arrafin = {} = t_arracatAge.slice(t_arracatAge.length-n0);
+
+    var arrayEND = [];
+    for (var i1=0; i1<arrafin.length; i1++)
+    {
+        arrayEND[i1] = arrafin[i1].name;
+    }
+    return arrayEND;
+}
+
+-05 test05
+ function nameStats(cotolist)
+{
+    var arraN = {name:[] } ;
+
+    for (var i = 0; i < cotolist.length; i++)
+    {
+        arraN.name[i]= cotolist[i].name;
+    }
+    var ameN={nam:[],cou:[]};
+    var counter=0;
+    for (var i5 = 0; i5 < arraN.name.length; i5++) 
+    {   
+        counter=0;
+        ameN.nam.push(arraN.name[i5]);
+        for (var j5 = i5+1; j5 < arraN.name.length; j5++) 
+        {
+            if (arraN.name[i5]===arraN.name[j5])
+            {
+                counter=counter+1;
+                arraN.name.splice(j5,1);
+                j5=j5-1;
+            }   
+        }
+        ameN.cou.push(counter+1);
+    }
+}
+
+-06 test06
+ { catFactory: [Function: catFactory],
+  catsGroupGenerate: [Function: catsGroupGenerate] }
+
+-06 test06.catFactory
+ function catFactory(defaults) {
+    var name = ['Айсберг', 'Аскольд', 'Астерикс', 'Аякс', 'Артур', 'Асклепий', 'Арес'];
+    var age = ['1', '2', '3', '5', '7', '9', '10', '13'];
+    var gender = ['Мужской', 'Женский', 'Непонятный'];
+    var legsCount = ['4', '3'];
+    var tailLength  = ['1', '3', '5', '7', '9', '11', '13', '15', '25'];
+    
+    var CatFac = {}; 
+  
+    if (typeof defaults !== 'undefined') {
+        CatFac.name = defaults.name || pick01(name);
+        CatFac.age = defaults.age || pick01(age);
+        CatFac.gender = defaults.gender || pick01(gender);
+        CatFac.legsCount = defaults.legsCount || pick01(legsCount);
+        CatFac.tailLength  = defaults.tailLength || pick01(tailLength);
+    } else {
+        CatFac.name = pick01(name);
+        CatFac.age = pick01(age);
+        CatFac.gender = pick01(gender);
+        CatFac.legsCount = pick01(legsCount);
+        CatFac.tailLength  = pick01(tailLength);
+    }
+ return CatFac;
+}
+
+-06 test06.catsGroupGenerate
+ function catsGroupGenerate(n0,defaults){
+    var arraCatFac = [];
+    for (var i=0; i<n0; i++){
+        arraCatFac[i]=catFactory(defaults);
+    } 
+    return arraCatFac;
+}
+
+
+  Cat
+    #indexOf()
+
+-- остался для примера --
+      ✓ should return -1 when the value is not present
+
+-- work test01 --
+[ 'qq', 'ww', 'ee', 'rr', 'tt', 'yy', 'uu', 'ii' ]
+ww
+1
+      ✓ should return -1 when the value is not present
+
+-- work test02 --
+
+ catfac= { name: 'Аякс',
+  age: '2',
+  gender: 'Женский',
+  legsCount: '4',
+  tailLength: '11' }
+
+ tmp= [ '1', '1', '1', '1', '1' ]
+      ✓ should return -1 when the value is not present
+
+-- work test03 --
+
+ catfacgen = [ { name: 'Астерикс',
+    age: '10',
+    gender: 'Женский',
+    legsCount: '3',
+    tailLength: '11' },
+  { name: 'Астерикс',
+    age: '3',
+    gender: 'Мужской',
+    legsCount: '4',
+    tailLength: '11' } ]
+      ✓ should return -1 when the value is not present
+
+
+  4 passing (9ms)
+
