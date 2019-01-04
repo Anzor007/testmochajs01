@@ -1,0 +1,22 @@
+{
+  "name": "testmochajs01",
+  "version": "1.0.0",
+  "main": "ooo.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anzor007/testmochajs01.git"
+  },
+  "keywords": [
+    "ls"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anzor007/testmochajs01/issues"
+  },
+  "homepage": "https://github.com/Anzor007/testmochajs01#readme",
+  "description": ""
+}
