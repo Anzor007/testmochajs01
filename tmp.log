@@ -1,111 +1,44 @@
 
-> testmochajs01@1.0.0 test /Users/gurdzhibek/lodos/testmochajs01
-> mocha
-
-
-
-  Cat
-    #indexOf()
-
--- остался для примера --
-      ✓ should return -1 when the value is not present
-
--- work test01 --
-[ 'qq', 'ww', 'ee', 'rr', 'tt', 'yy', 'uu', 'ii' ]
-rr
-3
-      ✓ should return -1 when the value is not present
-
--- work test02 --
-
- catfac= { name: 'Артур',
-  age: '2',
-  gender: 'Женский',
+  { name: 'упс',
+  age: 'ops',
+  gender: 'ops',
   legsCount: '4',
-  tailLength: '9' }
+  tailLength: '11' }
 
- tmp= [ '1', '1', '1', '1', '1' ]
-      ✓ should return -1 when the value is not present
+  { name: 'Астерикс',
+  age: '13',
+  gender: 'Мужской',
+  legsCount: '3',
+  tailLength: '3' }
 
--- work test03 --
-
- catfacgen = []
-
- ni=  0
- tmp3=  [ 0 ]
- indexOf 0
-
- catfacgen = [ { name: 'Аякс',
-    age: '5',
-    gender: 'Женский',
-    legsCount: '4',
-    tailLength: '3' } ]
-
- ni=  1
- tmp3=  [ 0, 1 ]
- indexOf 1
-
- catfacgen = [ { name: 'Айсберг',
-    age: '13',
-    gender: 'Мужской',
-    legsCount: '4',
-    tailLength: '15' },
-  { name: 'Артур',
-    age: '13',
-    gender: 'Женский',
-    legsCount: '3',
-    tailLength: '1' } ]
-
- ni=  2
- tmp3=  [ 0, 1, 2 ]
- indexOf 2
-
- catfacgen = [ { name: 'Артур',
-    age: '13',
-    gender: 'Мужской',
-    legsCount: '3',
-    tailLength: '11' },
-  { name: 'Аскольд',
-    age: '5',
-    gender: 'Женский',
-    legsCount: '4',
-    tailLength: '7' },
-  { name: 'Айсберг',
-    age: '13',
-    gender: 'Женский',
-    legsCount: '4',
-    tailLength: '11' } ]
-
- ni=  3
- tmp3=  [ 0, 1, 2, 3 ]
- indexOf 3
-
- catfacgen = [ { name: 'Айсберг',
-    age: '13',
-    gender: 'Непонятный',
-    legsCount: '3',
-    tailLength: '9' },
-  { name: 'Аскольд',
+  [ { name: 'Астерикс',
     age: '10',
     gender: 'Мужской',
     legsCount: '3',
     tailLength: '1' },
-  { name: 'Айсберг',
-    age: '10',
+  { name: 'Арес',
+    age: '3',
     gender: 'Женский',
     legsCount: '3',
-    tailLength: '9' },
-  { name: 'Артур',
-    age: '5',
+    tailLength: '1' },
+  { name: 'Аскольд',
+    age: '1',
     gender: 'Женский',
-    legsCount: '4',
-    tailLength: '7' } ]
+    legsCount: '3',
+    tailLength: '15' } ]
 
- ni=  4
- tmp3=  [ 0, 1, 2, 3, 4 ]
- indexOf 4
-      ✓ should return -1 when the value is not present
-
-
-  4 passing (13ms)
-
+  [ { name: 'Артур',
+    age: 'ops',
+    gender: 'Женский',
+    legsCount: 'ops',
+    tailLength: '1' },
+  { name: 'Аякс',
+    age: 'ops',
+    gender: 'Женский',
+    legsCount: 'ops',
+    tailLength: '7' },
+  { name: 'Артур',
+    age: 'ops',
+    gender: 'Мужской',
+    legsCount: 'ops',
+    tailLength: '3' } ]

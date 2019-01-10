@@ -1,62 +1,62 @@
+/* ---------------------------------------------------------------------------- /**/
+/* Задача 4                                                                     /**/
+/* Const list = catsGroupGenerate(999)                                          /**/
+/* Написать функции, которые принимая list вернут массив:                       /**/
+/* - котов мужского пола                                                        /**/
+/* - имен                                                                       /**/
+/* - n самых старых котов                                                       /**/
+/*      (функция также принимает параметр n - максимальный размер результата)   /**/
+/* - имен n самых молодых кошек                                                 /**/
+/*      (функция также принимает параметр n - максимальный размер результата)   /**/
+/* ---------------------------------------------------------------------------- /**/
+
 var catsGG = require('./test_03.js');
 
-function catMen(catsGGList) {
-    var arraCatMen = [];
-
-    var counter = 0;
-
-    for (var i=0; i<n; i++){
-        if (catsGGList[i].gender === "Мужской"){            
-            arraCatMen[counter] = catsGGList[i];
-            counter++;
-        }
-     }
-     if (counter===0){
-         console.log (" Мужиков нет ");
-     }
-     else{
-        console.log (" - котов мужского пола -\n",counter);
-        console.log (" ",arraCatMen);
-     }
-     
-     return arraCatMen;
+function catMan(catsGGList) //- котов мужского пола
+{
+    return catsGGList.filter(cat => cat.gender === "Мужской");
 }
+var cats0 = catsGG(10);
+//console.log("catMan\n",cats0.map(cat => cat.gender),cats0.length);
+//t=catMan(cats0);
+//console.log(t,t.length);
+
 
 function catName(catsGGList) {
-    var arraCatName = [] ;
-    for (var i=0; i<n; i++) {
-        arraCatName[i] = catsGGList[i].name;
-     }
-     return arraCatName;
+
+    return catsGGList.map(cat => cat.name);
 }
 
-function catOld(catsGGList,n0) {
-    var t_arracatAge=[];
-    for (var i0=0; i0<catsGGList.length; i0++) {
-        t_arracatAge[i0]=catsGGList[i0];
-    }
-    t_arracatAge.sort((prev,next) => prev.age-next.age);
-    var arrafin = t_arracatAge.slice(t_arracatAge.length-n0);
-    return arrafin;
+console.log("catNam\n",catName(cats0),catName(cats0).length);
+
+
+
+
+function catOldMan(catsGGList,count) {
+    var catAge = catMan(catsGGList);
+  //  console.log("catAgeMan",catAge,catAge.length);
+    catAge.sort((a,b) => (a.age-b.age));
+  //  return catAge.slice(-count);
+    return catAge.slice(catAge.length-count);
 }
+//ar catMtmp = catOldMan(cats0,5);
+//console.log("catOldMan\n",catMtmp.map(cat => cat.age));
+//console.log(catMtmp,catMtmp.length);
 
-function catKid(catsGGList,n0) {
-    var t_arracatAge=[];
 
-    for (var i0=0; i0<catsGGList.length; i0++) {
-        t_arracatAge[i0]=catsGGList[i0];
-    }
+function catWoman(catsGGList,count) {
+    var catWAge = catsGGList.filter(cat => cat.gender === "Женский");
+  //  console.log("1catWAge\n",count,catWAge.map(cat => cat.age),catWAge.length);
+    catWAge.sort((a,b) => (a.age-b.age));
+    console.log("11catWAge\n",count,catWAge,catWAge.length);
 
-    t_arracatAge.sort((prev,next) => next.age-prev.age);
-
-    var arrafin = {} = t_arracatAge.slice(t_arracatAge.length-n0);
-
-    var arrayEND = [];
-    for (var i1=0; i1<arrafin.length; i1++)
-    {
-        arrayEND[i1] = arrafin[i1].name;
-    }
-    return arrayEND;
+    return catWAge.slice(count);
 }
+console.log("\n--------",cats0,cats0.length);
+ntmp=3;
+var tmpw = catWoman(cats0,ntmp);
+console.log("tmp",tmpw,tmpw.length);
+console.log("catWoman\n",tmpw.map(cat => cat.age));
+//console.log(tmpw,tmpw.length);
 
-module.exports = {catMen,catName,catOld,catKid};
+module.exports = {catMan, catName, catOldMan, catWoman};

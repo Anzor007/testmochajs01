@@ -34,9 +34,9 @@ describe('Cat', function() {
         var d=0;
         if (r!==-1)
         { d=1;}
-        console.log(li );
-        console.log(t );
-        console.log(r );
+        //console.log(li );
+        //console.log(t );
+        //console.log(r );
         assert.equal(1, d);
       });
 
@@ -44,7 +44,7 @@ describe('Cat', function() {
         console.log("\n-- work test02 --");
         var catfac={};
         catfac = test02();
-        console.log("\n catfac=",catfac);
+        //console.log("\n catfac=",catfac);
         var tmp=[];
         for (var prop in catfac){
           if (catfac[prop]== 'undefined' )
@@ -56,7 +56,7 @@ describe('Cat', function() {
           }
           //(catfac[prop]== 'undefined' ) ?
         }
-        console.log("\n tmp=",tmp);
+        //console.log("\n tmp=",tmp);
         assert.equal(-1, tmp.indexOf(0));
       });
       it('should return -1 when the value is not present', function(){
@@ -67,7 +67,7 @@ describe('Cat', function() {
         {
           var catfacgen={};
           catfacgen = test03(ni);
-          console.log("\n catfacgen =",catfacgen);
+          //console.log("\n catfacgen =",catfacgen);
 
           tmp3.push( catfacgen.length);
           console.log("\n ni= ",ni);

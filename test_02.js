@@ -11,10 +11,10 @@ function catFactory()
 {
     var massName = ['Айсберг','Аскольд','Астерикс' ,'Аякс'     ,'Артур'];
     var massAge = ['1','2','3','5','7','9','10','13'];
-    var massGender = ['Мужской','Женский','Непонятный'];
+    var massGender = ['Мужской','Женский'];
     var massLegsCount = ['4','3'];
     var massTailLength  = ['1','3','5','7','9','11','13','15','25'];
-    
+
     var catfac = {};
     catfac.name = pick01(massName);
     catfac.age = pick01(massAge);

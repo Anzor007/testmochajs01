@@ -4,12 +4,12 @@ var pick01 = require('./test_01.js');
 function catFactory(defaults) {
     var name = ['Айсберг', 'Аскольд', 'Астерикс', 'Аякс', 'Артур', 'Асклепий', 'Арес'];
     var age = ['1', '2', '3', '5', '7', '9', '10', '13'];
-    var gender = ['Мужской', 'Женский', 'Непонятный'];
+    var gender = ['Мужской', 'Женский'];
     var legsCount = ['4', '3'];
     var tailLength  = ['1', '3', '5', '7', '9', '11', '13', '15', '25'];
-    
-    var CatFac = {}; 
-  
+
+    var CatFac = {};
+
     if (typeof defaults !== 'undefined') {
         CatFac.name = defaults.name || pick01(name);
         CatFac.age = defaults.age || pick01(age);
@@ -29,8 +29,8 @@ function catFactory(defaults) {
 function catsGroupGenerate(n0,defaults){
     var arraCatFac = [];
     for (var i=0; i<n0; i++){
-        arraCatFac[i]=catFactory(defaults);
-    } 
+        arraCatFac.push(catFactory(defaults));
+    }
     return arraCatFac;
 }
 
