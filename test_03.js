@@ -1,9 +1,11 @@
 var catfact = require('./test_02.js');
 
-function catsGroupGenerate(n0)
-{
+function catsGroupGenerate(n) {
     var arraCatFac = [];
-    for (var i=0; i<n0; i++) arraCatFac.push(catfact());
+
+    for (var i=0; i<n; i++) {
+        arraCatFac.push(catfact());
+    }
     return arraCatFac;
 }
 

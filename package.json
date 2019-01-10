@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "ooo.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-w": "mocha --watch"
   },
   "repository": {
     "type": "git",

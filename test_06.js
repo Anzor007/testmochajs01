@@ -7,7 +7,6 @@ function catFactory(defaults) {
     var gender = ['Мужской', 'Женский'];
     var legsCount = ['4', '3'];
     var tailLength  = ['1', '3', '5', '7', '9', '11', '13', '15', '25'];
-
     var CatFac = {};
 
     if (typeof defaults !== 'undefined') {
@@ -23,23 +22,22 @@ function catFactory(defaults) {
         CatFac.legsCount = pick01(legsCount);
         CatFac.tailLength  = pick01(tailLength);
     }
- return CatFac;
+    return CatFac;
 }
 
-function catsGroupGenerate(n0,defaults){
+function catsGroupGenerate(count,defaults) {
     var arraCatFac = [];
-    for (var i=0; i<n0; i++){
+
+    for (var i=0; i<count; i++){
         arraCatFac.push(catFactory(defaults));
     }
     return arraCatFac;
 }
-
-module.exports = {catFactory, catsGroupGenerate};
-
-
-
-//console.log("\n ",catFactory({gender:'ops', name:'упс', age:'ops'}));
-//console.log("\n ",catFactory());
-//var n=3;
-//console.log ("\n ", catsGroupGenerate(n));
-//console.log ("\n ", catsGroupGenerate(n, { age:'ops',legsCount:'ops'}));
+/*
+console.log("\n ",catFactory({gender:'ops', name:'упс', age:'ops'}));
+console.log("\n ",catFactory());
+var n=3;
+console.log ("\n ", catsGroupGenerate(n));
+console.log ("\n ", catsGroupGenerate(n, { age:'ops',legsCount:'ops'}));
+*/
+module.exports = { catFactory, catsGroupGenerate };
