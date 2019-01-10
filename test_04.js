@@ -13,25 +13,35 @@
 var catsGG = require('./test_03.js');
 
 function catMan(catsGGList) {
+
     return catsGGList.filter(cat => cat.gender === "Мужской");
+
 }
 
 function catName(catsGGList) {
+ 
     return catsGGList.map(cat => cat.name); // cat.name != undefined
+
 }
 
-function catOldMan(catsGGList,count) {
+function catOldMan(catsGGList, n) {
+    
     var catAge = catMan(catsGGList);
  
-    catAge.sort((a,b) => (a.age-b.age));
-    return catAge.slice(catAge.length-count);
+    catAge.sort((a, b) => (a.age - b.age));
+    
+    return catAge.slice(catAge.length - n);
+
 }
 
-function catWoman(catsGGList,count) {
+function catWoman(catsGGList, n) {
+
     var catWAge = catsGGList.filter(cat => cat.gender === "Женский");
 
-    catWAge.sort((a,b) => (a.age-b.age));
-    return catWAge.slice(count);
+    catWAge.sort((a, b) => (a.age - b.age));
+    
+    return catWAge.slice(n);
+
 }
 
 module.exports = { catMan, catName, catOldMan, catWoman };
