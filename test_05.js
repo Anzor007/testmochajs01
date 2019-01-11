@@ -1,6 +1,6 @@
 var catsGG999 = require('./test_03.js');
 
-function nameStats(cotolist) {
+function nameStats(cotolist) {  //FOREACH
     var stats = {};
 
     cotolist.forEach(cat => stats[cat.name] ? stats[cat.name]++ : stats[cat.name] = 1);
