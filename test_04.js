@@ -12,19 +12,19 @@
 
 var catsGG = require('./test_03.js');
 
-function catMan(catsGGList) {
+function catMan(catsGGList) {   //FILTER
 
     return catsGGList.filter(cat => cat.gender === "Мужской");
 
 }
 
-function catName(catsGGList) {
+function catName(catsGGList) {  //MAP
  
     return catsGGList.map(cat => cat.name); // cat.name != undefined
 
 }
 
-function catOldMan(catsGGList, n) {
+function catOldMan(catsGGList, n) { //SORT SLICE
     
     var catAge = catMan(catsGGList);
  
@@ -34,7 +34,7 @@ function catOldMan(catsGGList, n) {
 
 }
 
-function catWoman(catsGGList, n) {
+function catWoman(catsGGList, n) {  //SORT SLICE
 
     var catWAge = catsGGList.filter(cat => cat.gender === "Женский");
 
@@ -44,4 +44,5 @@ function catWoman(catsGGList, n) {
 
 }
 
+console.log(catMan(catsGG(5)));
 module.exports = { catMan, catName, catOldMan, catWoman };

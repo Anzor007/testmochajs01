@@ -25,7 +25,8 @@ describe('Cat', function() {
       console.log("\n-- остался для примера --");
       assert.equal(-1, [1,2,3].indexOf(4));
     });
-
+    /*------------------------------------------------------------------*/
+    
     it('should return -1 when the value is not present', function(){
         console.log("\n-- work test01 --");
         var li=['qq','ww','ee','rr','tt','yy','uu','ii'];
@@ -39,42 +40,125 @@ describe('Cat', function() {
         //console.log(r );
         assert.equal(1, d);
       });
+    /*------------------------------------------------------------------*/
 
-      it('should return -1 when the value is not present', function(){
+    it('should return -1 when the value is not present', function() {
         console.log("\n-- work test02 --");
         var catfac={};
         catfac = test02();
-        //console.log("\n catfac=",catfac);
         var tmp=[];
         for (var prop in catfac){
           if (catfac[prop]== 'undefined' )
           {
+            //console.log(prop + " t= "+catfac[prop]);
             tmp.push('0');
           }
           else{
+            //console.log(prop + " e= "+catfac[prop]);
             tmp.push('1');
           }
-          //(catfac[prop]== 'undefined' ) ?
         }
-        //console.log("\n tmp=",tmp);
         assert.equal(-1, tmp.indexOf(0));
       });
-      it('should return -1 when the value is not present', function(){
-        var n3=5;
+    /*------------------------------------------------------------------*/
+      
+    it('should return -1 when the value is not present', function(){
         console.log("\n-- work test03 --");
-        var tmp3 = [];
-        for (var ni=0; ni<n3; ni++)
-        {
+        var n3 = 5;
+        
+        for (var i = 1; i < n3; i++) {
+          
           var catfacgen={};
-          catfacgen = test03(ni);
+          catfacgen = test03(i);
           //console.log("\n catfacgen =",catfacgen);
+          //console.log("\n i= ",i);
+          var tmpA = [];
 
-          tmp3.push( catfacgen.length);
-          console.log("\n ni= ",ni);
-          console.log(" tmp3= ",tmp3);
-          console.log(" indexOf", tmp3.indexOf(ni));
-          assert.equal(ni, tmp3.indexOf(ni));
+          catfacgen.forEach(function (cat) {
+            if (cat == 'undefined' )
+            {
+            //  console.log("then", cat);
+              tmpA.push('0');
+            }
+            else{
+            //  console.log("else", cat);
+              tmpA.push('1');
+            }
+          });
+          assert.equal(-1, tmpA.indexOf(0));
         }
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test04.1 --");
+
+        var n4 = 20;
+        var catList4 =test03(n4);
+        //console.log("catlist4", catList4);
+        var catManList4 = {};
+        catManList4 = test04.catMan(catList4);
+        var tmp4 = [];
+        //console.log("catmanlist4", catManList4, catManList4.length);
+        if (catManList4.length == 0) {
+          tmp4.push(1);
+        }
+        //console.log("1temp4 =",tmp4);  
+        catManList4.filter (function (cat4) {
+          if (cat4.gender == 'Мужской' )
+          {
+          //  console.log("then", cat4);
+            tmp4.push('1');
+          }
+          else{
+          //  console.log("else", cat4);
+            tmp4.push('0');
+          }
+        });
+        //console.log("2temp4 =",tmp4);  
+        assert.equal(-1, tmp4.indexOf(0));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test04.2 --");
+        assert.equal(-1, [1,2,3].indexOf(4));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test04.3 --");
+        assert.equal(-1, [1,2,3].indexOf(4));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test04.4 --");
+        assert.equal(-1, [1,2,3].indexOf(4));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+      console.log("\n-- work test05 --");
+      assert.equal(-1, [1,2,3].indexOf(4));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test06.1 --");
+        assert.equal(-1, [1,2,3].indexOf(4));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test06.2 --");
+        assert.equal(-1, [1,2,3].indexOf(4));
+      });
+    /*------------------------------------------------------------------*/
+
+    it('should return -1 when the value is not present', function(){
+        console.log("\n-- work test07 --");
+        assert.equal(-1, [1,2,3].indexOf(4));
       });
   });
 });
