@@ -40,9 +40,9 @@ function catWoman(catsGGList, n) {  //SORT SLICE
 
     catWAge.sort((a, b) => (a.age - b.age));
     
-    return catWAge.slice(n);
+    return catWAge.slice(0,n);
 
 }
 
-console.log(catMan(catsGG(5)));
+//console.log(catMan(catsGG(5)));
 module.exports = { catMan, catName, catOldMan, catWoman };
