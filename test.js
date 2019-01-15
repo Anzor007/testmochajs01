@@ -5,6 +5,7 @@ var test03 = require('./test_03');
 var test04 = require('./test_04');
 var test05 = require('./test_05');
 var test06 = require('./test_06');
+var test07 = require('./test_07');
 //console.log("\n-01 test01\n",test01);
 //console.log("\n-02 test02\n",test02);
 //console.log("\n-03 test03\n",test03);
@@ -237,8 +238,17 @@ describe('Cat', function() {
     /*------------------------------------------------------------------*/
 
     it('test07   should return -1 when the value is not present', function(){
-        assert.equal(-1, [1,2,3].indexOf(4));
-    });
+     
+      var catlist7 = test07({gender : 'toto'});                             console.log("calist7 = ",catlist7);
+      var objNam = Object.keys(catlist7);                                   console.log("objNam  = ",objNam);
+      var b = objNam.some(function (t) { return t == 'loudness'; });        console.log("b = ",b);
+      var tmp7 = [] ;  
 
+      b ? tmp7.push('1') : tmp7.push('0');
+      
+      console.log("tmp7 = ",tmp7);
+      assert.equal(-1, tmp7.indexOf('0'));
+    });
+ 
   });
 });
