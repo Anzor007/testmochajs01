@@ -7,6 +7,9 @@ function catFactoryL(defaults) {
     var gender = ['Мужской', 'Женский'];
     var legsCount = ['4', '3'];
     var tailLength  = ['1', '3', '5', '7', '9', '11', '13', '15', '25'];
+    
+    var loudness = ['0','1','2','3','4','5','6','7','8','9',];
+
     var CatFac = {};
 
     if (typeof defaults !== 'undefined') {
@@ -15,12 +18,16 @@ function catFactoryL(defaults) {
         CatFac.gender = defaults.gender || pick01(gender);
         CatFac.legsCount = defaults.legsCount || pick01(legsCount);
         CatFac.tailLength  = defaults.tailLength || pick01(tailLength);
+        CatFac.loudness = defaults.age || pick01(loudness);
+
     } else {
         CatFac.name = pick01(name);
         CatFac.age = pick01(age);
         CatFac.gender = pick01(gender);
         CatFac.legsCount = pick01(legsCount);
         CatFac.tailLength  = pick01(tailLength);
+        CatFac.loudness = pick01(loudness);
+
     }
     return CatFac;
 }
